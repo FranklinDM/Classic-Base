@@ -1,0 +1,4 @@
+skin	global			classic/2.0		chrome/global/
+skin	browser			classic/2.0		chrome/browser/
+skin	mozapps			classic/2.0		chrome/mozapps/
+skin	communicator	classic/2.0		chrome/communicator/
