@@ -7,9 +7,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
-
-
-
 :root {
   --toolbar-custom-color: hsl(210,75%,92%);
   --toolbar-highlight-top: rgba(255,255,255,.5);
@@ -20,7 +17,6 @@
   --toolbarbutton-border-color: hsla(210,54%,20%,.2);
 
   --toolbarbutton-image: url("chrome://browser/skin/Toolbar.png");
-  --toolbarbutton-glass-image: url("chrome://browser/skin/Toolbar-glass.png");
   --toolbarbutton-inverted-image: url("chrome://browser/skin/Toolbar-inverted.png");
 
   --tab-background: linear-gradient(transparent, hsla(0,0%,45%,.1) 1px, hsla(0,0%,32%,.2) 80%, hsla(0,0%,0%,.2));
@@ -682,10 +678,6 @@ toolbar[brighttext] .toolbarbutton-1 {
   list-style-image: var(--toolbarbutton-inverted-image);
 }
 
-.toolbarbutton-1:not(:-moz-lwtheme) {
-  list-style-image: var(--toolbarbutton-glass-image);
-}
-
 .toolbarbutton-1[disabled=true] > .toolbarbutton-icon,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-dropmarker,
@@ -1042,10 +1034,6 @@ toolbar[brighttext] #home-button.bookmark-item {
   list-style-image: var(--toolbarbutton-inverted-image);
 }
 
-#home-button.bookmark-item:not(:-moz-lwtheme) {
-  list-style-image: var(--toolbarbutton-glass-image);
-}
-
 #home-button {
   -moz-image-region: rect(0, 90px, 18px, 72px);
 }
@@ -1070,10 +1058,6 @@ toolbar[brighttext] #home-button.bookmark-item {
 
 toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   list-style-image: var(--toolbarbutton-inverted-image);
-}
-
-#bookmarks-menu-button.bookmark-item:not(:-moz-lwtheme) {
-  list-style-image: var(--toolbarbutton-glass-image);
 }
 
 #print-button {
@@ -1513,7 +1497,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .ac-result-type-keyword,
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
-  list-style-image: url(chrome://global/skin/icons/Search-glass.png);
+  list-style-image: url("chrome://global/skin/icons/search-icon.png");
   -moz-image-region: rect(0px 32px 16px 16px);
   width: 16px;
   height: 16px;
@@ -2006,11 +1990,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-bottom: 1px;
 }
 
-.tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-system-metric(windows-compositor):not(:-moz-lwtheme),
-.tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-system-metric(windows-compositor):not(:-moz-lwtheme) {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-glass.png);
-}
-
 toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-up,
 toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.png);
@@ -2052,11 +2031,6 @@ toolbar[brighttext] .tabbrowser-arrowscrollbox > .scrollbutton-down {
 #TabsToolbar > toolbarpaletteitem > #new-tab-button {
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
   -moz-image-region: auto;
-}
-
-#TabsToolbar > #new-tab-button:-moz-system-metric(windows-compositor):not(:-moz-lwtheme),
-#TabsToolbar > toolbarpaletteitem > #new-tab-button:-moz-system-metric(windows-compositor):not(:-moz-lwtheme) {
-  list-style-image: url(chrome://browser/skin/tabbrowser/newtab-glass.png);
 }
 
 .tabs-newtab-button:-moz-lwtheme-brighttext,
@@ -4016,15 +3990,6 @@ html|*#gcli-output-frame {
     color: var(--window-text-color);
     border-left-style: none !important;
     border-right-style: none !important;
-  }
-
-  :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
-  :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
-  #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
-  #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
-  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
-  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button, #webrtc-status-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme) {
-    list-style-image: var(--toolbarbutton-glass-image);
   }
 
   :-moz-any(#toolbar-menubar, #TabsToolbar[tabsontop=true], #nav-bar[tabsontop=false]) .toolbarbutton-1 > .toolbarbutton-menu-dropmarker:not(:-moz-lwtheme),

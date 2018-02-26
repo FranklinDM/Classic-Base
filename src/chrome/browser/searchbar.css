@@ -60,7 +60,7 @@
 
 .search-go-button {
   padding: 1px;
-  list-style-image: url("chrome://global/skin/icons/Search-glass.png");
+  list-style-image: url("chrome://global/skin/icons/search-icon.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
 

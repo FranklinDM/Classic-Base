@@ -79,7 +79,7 @@ textbox.plain html|*.textbox-textarea {
 /* ::::: search textbox ::::: */
 
 .textbox-search-icon {
-  list-style-image: url(chrome://global/skin/icons/Search-glass.png);
+  list-style-image: url(chrome://global/skin/icons/search-icon.png);
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
@@ -92,7 +92,7 @@ textbox.plain html|*.textbox-textarea {
 }
 
 .textbox-search-clear {
-  list-style-image: url(chrome://global/skin/icons/Search-close.png);
+  list-style-image: url(chrome://global/skin/icons/search-close.png);
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 

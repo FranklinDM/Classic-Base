@@ -326,15 +326,6 @@ toolbar[brighttext] #downloads-indicator-icon {
                               0, 108, 18, 90) center no-repeat;
 }
 
-@media (-moz-windows-compositor) {
-  :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) #downloads-indicator-icon:not(:-moz-lwtheme),
-  #TabsToolbar[tabsontop=true] #downloads-indicator-icon:not(:-moz-lwtheme),
-  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #downloads-indicator-icon:not(:-moz-lwtheme) {
-    background: -moz-image-rect(var(--toolbarbutton-glass-image),
-                                0, 108, 18, 90) center no-repeat;
-  }
-}
-
 #downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
   background-image: url("chrome://browser/skin/downloads/download-glow.png");
 }
