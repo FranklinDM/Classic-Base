@@ -2,14 +2,14 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
         <!-- Extension's ID and type -->
-        <em:id>classic@franklindm</em:id>
+        <em:id>classic-base@franklindm</em:id>
         <!-- Types: 2=Extensions, 4=Themes, 8=Locale, 16=Plugin, 32=Multiple Item Package -->
         <em:type>4</em:type>
 
         <!-- Extension's info and metadata -->
-        <em:name>Classic</em:name>
+        <em:name>Classic Base</em:name>
         <em:version>dev-build</em:version>
-        <em:description>Classic style windows</em:description>
+        <em:description>Build up your own classic theme with this template.</em:description>
         <em:creator>FranklinDM</em:creator>
         <em:homepageURL>https://franklindm.github.io/</em:homepageURL>
 
@@ -17,7 +17,7 @@
         <em:skinnable>true</em:skinnable>
 
         <!-- internalName must match the 'skinname' part of the relevant chrome.manifest directives in order for those mappings to be associated with this skin. -->
-        <em:internalName>classic/2.0</em:internalName>
+        <em:internalName>classic-base/1.0</em:internalName>
 
         <!-- Target Application(s) this extension can install into, with minimum and maximum supported versions. -->
         <em:targetApplication>
