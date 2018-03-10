@@ -11,7 +11,7 @@
 /* ::::: progressmeter ::::: */
 
 progressmeter {
-  -moz-appearance: progressbar;
+  -moz-appearance: none;
   margin: 2px 4px;
   border: 2px solid;
   -moz-border-top-colors: ThreeDShadow -moz-Dialog;
@@ -23,11 +23,10 @@ progressmeter {
   min-height: 15px;
 }
 
-.progress-bar 
-{
-  -moz-appearance: progresschunk;
+.progress-bar {
+  -moz-appearance: none;
   min-width: 0px;
-  background-color: ThreeDShadow;
+  background-color: darkblue;
 }
 
 /* ::::: statusbar progressmeter ::::: */
