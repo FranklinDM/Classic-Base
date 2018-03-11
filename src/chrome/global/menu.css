@@ -13,7 +13,7 @@
 menu,
 menuitem,
 .splitmenu-menuitem {
-  -moz-appearance: menuitem;
+  -moz-appearance: none;
   -moz-box-align: center;
   color: MenuText;
   font: menu;
@@ -61,8 +61,8 @@ menuitem.spell-suggestion {
 }
 
 .menu-text {
+  -moz-appearance: none;
   -moz-padding-start: 1.45em !important;
-  -moz-appearance: menuitemtext;
 }
 
 .menu-text,
@@ -97,18 +97,17 @@ menuitem.spell-suggestion {
 menu.menu-iconic > .menu-iconic-left,
 menuitem.menuitem-iconic > .menu-iconic-left,
 .splitmenu-menuitem[iconic="true"] > .menu-iconic-left {
-  -moz-appearance: menuimage;
+  -moz-appearance: none;
   padding-top: 2px;
 }
 
 /* ..... menu arrow box ..... */
 
 .menu-right {
-  -moz-appearance: menuarrow;
-  -moz-margin-end: -2px;
-  list-style-image: none;
-  min-width: 1.28em;
-  padding-top: 1px;
+  margin: 0 0 0 6px;
+  width: 8px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp.gif");
+  -moz-image-region: auto;
 }
 
 /* ::::: menu/menuitems in menubar ::::: */
@@ -138,17 +137,6 @@ menubar > menu:-moz-lwtheme[_moz-menuactive="true"]:not([disabled="true"]) {
   background-color: Highlight;
   color: HighlightText !important;
   text-shadow: none;
-}
-
-@media (-moz-windows-default-theme) {
-  menubar > menu:-moz-lwtheme {
-    -moz-appearance: menuitem;
-  }
-
-  menubar > menu:-moz-lwtheme[_moz-menuactive="true"]:not([disabled="true"]) {
-    color: inherit !important;
-    text-shadow: inherit;
-  }
 }
 
 menubar > menu:-moz-window-inactive {
@@ -236,41 +224,35 @@ menulist > menupopup > menuitem:not(.menuitem-iconic) > .menu-iconic-text {
   margin: 0 !important;
 }
 
+menuitem[checked="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check.gif");
+}
+
+menuitem[checked="true"][disabled="true"],
+menuitem[checked="true"][disabled="true"][_moz-menuactive="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check-disabled.gif");
+}
+
 /* ::::: checkbox and radio menuitems ::::: */
 
-menuitem[type="checkbox"],
-menuitem[checked="true"] {
-  -moz-appearance: checkmenuitem;
-}
-menuitem[type="checkbox"] > .menu-iconic-left,
-menuitem[checked="true"] > .menu-iconic-left {
-  -moz-appearance: menucheckbox;
-  padding-top: 0px;
+menuitem[checked="true"][type="radio"] {
+  list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
 }
 
-menuitem[type="radio"] {
-  -moz-appearance: radiomenuitem;
+menuitem[checked="true"][type="radio"][disabled="true"],
+menuitem[checked="true"][type="radio"][disabled="true"][_moz-menuactive="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-radio-disabled.gif");
 }
-menuitem[type="radio"] > .menu-iconic-left {
-  -moz-appearance: menuradio;
-  padding-top: 0px;
-}
-
-menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
-  /* prevent .menu-iconic-icon from enforcing a minimal height of 16px (see bug 411064)
-     XXXzeniko apply that .menu-iconic-icon rule only for children of .menu-iconic */
-  display: none;
-}
-
 /* ::::: menuseparator ::::: */
 
 menuseparator {
-  -moz-appearance: menuseparator;
-  padding: 3px 1px 4px 1px;
+  -moz-appearance: none;
+  margin: 2px 3px;
   border-top: 1px solid ThreeDShadow;
-  border-bottom: 1px solid ThreeDHighlight;
+}
+
+menuseparator[collapsed="true"] {
+  margin: 0 !important;
 }
 
 menulist > menupopup > menuseparator,
