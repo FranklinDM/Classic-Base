@@ -49,19 +49,17 @@
   color: inherit; /* allow menubar items to be styled */
 }
 
+
 #navigator-toolbox {
   -moz-appearance: none;
   background-color: transparent;
-  border-top: none;
 }
 
-#navigator-toolbox::after {
-  content: "";
-  display: -moz-box;
-  -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
-  height: 1px;
-  background-color: ThreeDShadow;
+#navigator-toolbox:-moz-lwtheme {
+  box-shadow: inset 0 -1px 0 0 ThreeDShadow;
+  padding-bottom: 1px;
 }
+
 #navigator-toolbox[tabsontop=false]::after,
 #main-window[disablechrome] #navigator-toolbox::after {
   visibility: collapse;
@@ -69,7 +67,6 @@
 
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
   -moz-appearance: none;
-  border-style: none;
   background-color: -moz-Dialog;
 }
 
@@ -119,13 +116,6 @@
   font-weight: bold;
   padding: 0 1.5em .05em;
   margin: 0 0 2px;
-}
-
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
-  #appmenu-button {
-    border-radius: 0 0 4px 4px;
-  }
 }
 
 @media (-moz-windows-classic) {
@@ -1460,18 +1450,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   margin-top: 1px;
 }
 
-/* Make sure the elements on the Tab bar are not "glued" right
-   up against the AppMenu button / the caption when the tabs are
-   on top and the window is unmaximized */
-#main-window[sizemode="normal"] #TabsToolbar[tabsontop=true] {
-  margin-top: 1px;
-}
-
-#TabsToolbar:not(:-moz-lwtheme),
-#TabsToolbar[tabsontop=false] {
-  background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, rgba(0,0,0,.05) 1px, transparent 50%);
-}
-
 .tabbrowser-tab,
 .tabs-newtab-button {
   -moz-appearance: none;
@@ -1511,7 +1489,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 #main-window[sizemode="maximized"][tabsontop=true] .tabs-newtab-button,
 #main-window[sizemode="fullscreen"][tabsontop=true] .tabbrowser-tab,
 #main-window[sizemode="fullscreen"][tabsontop=true] .tabs-newtab-button {
-  margin: 0 0 1px;
+  margin: 0 0 -1px;
 }
 
 .tabbrowser-tab:hover,
@@ -2342,9 +2320,15 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border-top-style: none;
   border-bottom-style: none;
   padding-top: 1px;
-  background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
+  background-image: linear-gradient(ThreeDShadow 1px, ThreeDHighlight 1px);
   background-size: 100% 2px;
   background-repeat: no-repeat;
+}
+
+#addon-bar > * {
+  margin: 1px;
+  border: 1px solid;
+  border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
 }
 
 #status-bar {
@@ -3516,26 +3500,6 @@ html|*#gcli-output-frame {
     
   }
 
-/* ==== Windows Vista/7 (true glass) styling ==== */
-
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
-    #toolbar-menubar:not(:-moz-lwtheme),
-    #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
-    #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
-    #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
-    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
-      text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
-    }
-  
-    #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
-      background-color: rgba(255,255,255,.7);
-      border-radius: var(--toolbarbutton-border-radius);
-      color: black;
-    }
-    
-  }
- 
 /* ==== Windows 8/10 (flat color) styling ==== */
 
   @media (-moz-os-version: windows-win8) {
@@ -3559,18 +3523,22 @@ html|*#gcli-output-frame {
     -moz-appearance: none;
     background-color: #556;
   }
-
-  #toolbar-menubar:not(:-moz-lwtheme),
-  #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
-  #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
-  #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
-  #nav-bar + #customToolbars + #PersonalToolbar:-moz-any([collapsed=true],[moz-collapsed=true]) + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
+  
+  /* Make these toolbars transparent and removes borders that overlap the caption buttons when the window is maximized nad tabs are on top */
+  #main-window[sizemode="maximized"][tabsontop=true] #toolbar-menubar[autohide="true"]:not(:-moz-lwtheme),
+  #main-window[sizemode="maximized"][tabsontop=true] #toolbar-menubar[autohide="true"] ~ #TabsToolbar:not(:-moz-lwtheme) {
     background-color: transparent !important;
     color: var(--window-text-color);
     border-left-style: none !important;
     border-right-style: none !important;
   }
-
+  #main-window[sizemode="maximized"][tabsontop=true] #toolbar-menubar[autohide="true"] ~ #TabsToolbar {
+    border-top: none;
+  }
+  #main-window[sizemode="maximized"][tabsontop=true] #toolbar-menubar[autohide="true"] {
+    border: none;
+  }
+  
   :-moz-any(#toolbar-menubar, #TabsToolbar[tabsontop=true], #nav-bar[tabsontop=false]) .toolbarbutton-1 > .toolbarbutton-menu-dropmarker:not(:-moz-lwtheme),
   :-moz-any(#toolbar-menubar, #TabsToolbar[tabsontop=true], #nav-bar[tabsontop=false]) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:not(:-moz-lwtheme),
   #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .toolbarbutton-1 > .toolbarbutton-menu-dropmarker:not(:-moz-lwtheme),
@@ -3584,10 +3552,9 @@ html|*#gcli-output-frame {
        (-moz-os-version: windows-win8) {
   /* Vertical toolbar border */
   #main-window[sizemode=normal] #navigator-toolbox::after,
-  #main-window[sizemode=normal] #navigator-toolbox[tabsontop=true] > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
-  #main-window[sizemode=normal] #navigator-toolbox[tabsontop=false] > toolbar:not(#toolbar-menubar):not(#nav-bar) {
-    border-left: 1px solid rgba(10%,10%,10%,.4);
-    border-right: 1px solid rgba(10%,10%,10%,.4);
+  #main-window[sizemode=normal] #navigator-toolbox {
+    border-left: 1px solid ThreeDShadow;
+    border-right: 1px solid ThreeDShadow;
     background-clip: padding-box;
   }
   #main-window[sizemode=normal] #navigator-toolbox > toolbar:-moz-lwtheme {
@@ -3596,11 +3563,11 @@ html|*#gcli-output-frame {
   #main-window[sizemode=normal] #browser-border-start,
   #main-window[sizemode=normal] #browser-border-end {
     display: -moz-box;
-    background-color: rgba(10%,10%,10%,.4);
+    background-color: ThreeDShadow;
     width: 1px;
   }
   #main-window[sizemode=normal] #browser-bottombox {
-    border: 1px solid rgba(10%,10%,10%,.4);
+    border: 1px solid ThreeDShadow;
     border-top-style: none;
     background-clip: padding-box;
   }
@@ -3619,35 +3586,8 @@ html|*#gcli-output-frame {
     border-top-right-radius: var(--toolbarbutton-border-radius);
   }
 
-  /* Toolbar shadow behind tabs */
-  /* This code is only needed for restored windows (i.e. sizemode=normal)
-     because of the border radius on the toolbar below the tab bar. */
-  #main-window[sizemode=normal] #nav-bar[tabsontop=true]:not(:-moz-lwtheme),
-  #main-window[sizemode=normal] #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + toolbar:not(:-moz-lwtheme),
-  #main-window[sizemode=normal] #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar:not(:-moz-lwtheme),
-  #main-window[sizemode=normal][disablechrome] #navigator-toolbox[tabsontop=true]:not(:-moz-lwtheme)::after {
-    border-top: 1px solid rgba(10%,10%,10%,.4);
-    background-clip: padding-box;
-  }
-  #main-window[sizemode=normal] #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
-    background-image: none !important;
-  }
   #main-window[sizemode=normal] #tabbrowser-tabs[tabsontop=true] > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox > .scrollbox-innerbox:not(:-moz-lwtheme) {
     position: relative;
-  }
-
-  #navigator-toolbox[tabsontop=false] > #PersonalToolbar {
-    margin-top: 3px;
-  }
-  
-  #navigator-toolbox[tabsontop=false] > #PersonalToolbar:not(:-moz-lwtheme) {
-    margin-top: 2px;
-    border-top: 1px solid rgba(10%,10%,10%,.4);
-  }
-  
-  #main-window[sizemode=normal] #TabsToolbar[tabsontop=true] {
-    padding-left: 4px;
-    padding-right: 4px;
   }
 
   #main-window[sizemode=normal] #TabsToolbar[tabsontop=false] {
