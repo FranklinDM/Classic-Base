@@ -108,14 +108,13 @@
 #appmenu-button {
   -moz-appearance: none;
   background-clip: padding-box;
-  border: 1px solid;
+  border: 1px solid ThreeDShadow;
   border-top: none;
-  color: white;
-  text-shadow: 0 0 1px rgba(0,0,0,.7),
-               0 1px 1.5px rgba(0,0,0,.5);
+  color: #fff;
   font-weight: bold;
   padding: 0 1.5em .05em;
-  margin: 0 0 2px;
+  margin: 1px 1px 2px;
+  box-shadow: inset 0px 0px 0px 1px ThreeDHighlight;
 }
 
 @media (-moz-windows-classic) {
@@ -124,54 +123,35 @@
   }
 }
 
-#appmenu-button:hover:active,
-#appmenu-button[open] {
-  border-radius: 0;
-}
+/* app menu button - regular */
 
 #appmenu-button {
-  background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%);
-  border-color: rgba(6,42,83,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-              0 0 0 1px rgba(255,255,255,.25) inset;
-}
-#appmenu-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
-                    radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
-                    linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%);
-  border-color: rgba(6,42,83,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 2px 1px rgba(169,234,250,.7) inset,
-              0 -1px 0 rgba(169,234,250,.5) inset;
-}
-#appmenu-button:hover:active,
-#appmenu-button[open] {
-  background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset;
+  background: rgb(10,98,215);
 }
 
+#appmenu-button:hover:not(:active):not([open]) {
+  background: rgb(69,170,246);
+}
+
+#appmenu-button:hover:active,
+#appmenu-button[open] {
+  background: rgb(0,74,209);
+}
+
+/* app menu button - private browsing mode */
+
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
-  background-image: linear-gradient(rgb(153,38,211), rgb(105,19,163) 95%);
-  border-color: rgba(43,8,65,.9);
+  background: rgb(105,19,163);
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
-                    radial-gradient(farthest-side at bottom, rgb(192,81,247), rgba(236,172,255,0)),
-                    linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
-  border-color: rgba(43,8,65,.9);
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 2px 1px rgba(240,193,255,.7) inset,
-              0 -1px 0 rgba(240,193,255,.5) inset;
+  background: rgb(144,20,207);
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
 #main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
-  background-image: linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%);
+  background: rgb(95,0,158);
 }
-
-
 
 #appmenu-button > .button-box {
   border-style: none;
@@ -180,6 +160,7 @@
 
 #appmenu-button > .button-box > .button-menu-dropmarker {
   list-style-image: url(appmenu-dropmarker.png);
+  filter: invert(100%);
   width: auto;
   height: auto;
   padding: 0;
@@ -2917,27 +2898,12 @@ html|*#gcli-output-frame {
   list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
   width: 20px;
   height: 16px;
+  filter: invert(100%);
 }
 
 @media not all and (-moz-windows-classic) {
   #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
     margin-top: 1px;
-  }
-
-  #appmenu-button {
-    border-width: 2px;
-    -moz-border-left-colors: rgba(255,255,255,.5) rgba(6,42,83,.9);
-    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(6,42,83,.9);
-    -moz-border-right-colors: rgba(255,255,255,.5) rgba(6,42,83,.9);
-    margin-bottom: 1px; /* compensate white outer border */
-    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-                0 0 2px 1px rgba(255,255,255,.25) inset;
-  }
-
-  #main-window[privatebrowsingmode=temporary] #appmenu-button {
-    -moz-border-left-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
-    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
-    -moz-border-right-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
   }
 
   #appmenu-popup {
