@@ -71,17 +71,6 @@
 }
 
 @media not all and (-moz-windows-compositor) {
-  #main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
-    background: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px),
-                linear-gradient(rgba(50%,50%,50%,0), ActiveCaption 85%);
-    color: CaptionText;
-  }
-  #main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
-    background: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px),
-                linear-gradient(rgba(50%,50%,50%,0), InactiveCaption 85%);
-    color: InactiveCaptionText;
-  }
-
   #main-window[tabsintitlebar] #titlebar:-moz-lwtheme {
     visibility: hidden;
   }
@@ -3477,10 +3466,6 @@ html|*#gcli-output-frame {
     #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
     #navigator-toolbox[tabsontop=false] > toolbar:not(#toolbar-menubar):not(:-moz-lwtheme) {
       -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
-      background-color: transparent;
-    }
-    #toolbar-menubar[autohide=true] {
-      background-color: transparent !important;
     }
   }
 
