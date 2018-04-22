@@ -206,11 +206,3 @@ toolbar#ToolbarMode .toolbarbutton-text {
   -moz-padding-start: 0px;
   -moz-padding-end: 5px;
 }
-
-#ToolbarMode {
-  -moz-appearance: -moz-win-browsertabbar-toolbox;
-}
-
-#ToolbarEval {
-  -moz-appearance: toolbox;
-}
