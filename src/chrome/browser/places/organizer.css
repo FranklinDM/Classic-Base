@@ -3,8 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 :root {
-  --toolbar-custom-color: hsl(210,75%,92%);
-  --toolbar-highlight-top: rgba(255,255,255,.5);
   --toolbarbutton-image: url("chrome://browser/skin/Toolbar.png");
 }
 
@@ -38,9 +36,8 @@
 
 /* Menu */
 #placesMenu {
-  -moz-margin-start: 6px;
-  -moz-appearance: none;
   border: none;
+  -moz-margin-start: 6px;
 }
 
 #placesMenu > menu {
@@ -48,12 +45,7 @@
   -moz-padding-end: 1px;
   padding-top: 2px;
   padding-bottom: 2px;
-  -moz-appearance: toolbarbutton;
-%ifdef XP_WIN
-% use standard menu colors on OS/2
-  color: -moz-DialogText;
-%endif
-  border: 1px solid transparent;
+  border-width: 1px;
 }
 
 #placesMenu > menu[_moz-menuactive="true"] {
@@ -135,14 +127,6 @@
   -moz-padding-end: 3px;
 }
 
-#organizerScopeBar > toolbarbutton {
-  -moz-appearance: none;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  padding: 0 !important;
-  margin: 0 1px;
-}
-
 #organizerScopeBar > toolbarbutton > .toolbarbutton-icon {
   padding: 0;
   margin: 0;
@@ -151,14 +135,6 @@
 #organizerScopeBar > toolbarbutton > .toolbarbutton-text {
    margin: 0;
    padding: 2px 5px;
-}
-
-#organizerScopeBar > toolbarbutton:not([disabled="true"]):not([checked="true"]):hover {
-  border-color: ThreeDShadow;
-}
-
-#organizerScopeBar > toolbarbutton[checked="true"] {
-  border-color: ThreeDDarkShadow !important;
 }
 
 #searchFilter {
@@ -180,67 +156,4 @@
 
 #placesView {
   border-top: none;
-}
-
-@media not all and (-moz-windows-classic) {
-  #placesToolbox {
-    -moz-appearance: none;
-    background-color: transparent;
-  }
-
-  #placesToolbar {
-    -moz-appearance: none;
-    background-color: -moz-Dialog;
-    color: -moz-dialogText;
-  }
-}
-
-@media (-moz-windows-default-theme) {
-  #placesView > splitter {
-    border: 0;
-    -moz-border-end: 1px solid #A9B7C9;
-    min-width: 0;
-    width: 3px;
-    background-color: transparent;
-    -moz-margin-start: -3px;
-    position: relative;
-  }
-}
-
-@media (-moz-windows-glass) {
-  #placesToolbox {
-    border-top: none;
-  }
-
-  #placesToolbar {
-    background-image: linear-gradient(var(--toolbar-highlight-top), transparent);
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  #placesView,
-  #infoPane,
-  #placesList,
-  #placeContent {
-    background-color: #EEF3FA;
-  }
-
-  #placesToolbar {
-    background-color: var(--toolbar-custom-color);
-    color: black;
-  }
-
-  #detailsDeck {
-    border-top-color: #A9B7C9;
-  }
-
-  #searchFilter {
-    -moz-appearance: none;
-    padding: 2px;
-    -moz-padding-start: 4px;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.32);
-    border-radius: 2px;
-  }
 }
