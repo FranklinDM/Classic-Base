@@ -155,8 +155,8 @@ a {
 }
 
 #output-container.hideTimestamps > .message {
-  -moz-padding-start: 0;
-  -moz-margin-start: 7px;
+  padding-inline-start: 0;
+  margin-inline-start: 7px;
   width: calc(100% - 7px);
 }
 
@@ -254,7 +254,7 @@ a {
 
 .message[category=network] .status {
   flex: none;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
 }
 
 .message[category=network].mixed-content .url {
@@ -274,7 +274,7 @@ a {
   font-size: 10px;
   padding: 2px;
   line-height: 10px;
-  -moz-margin-end: 1ex;
+  margin-inline-end: 1ex;
 }
 
 /* CSS styles */
@@ -385,7 +385,7 @@ a {
   flex: 1;
   margin-top: 5px;
   margin-bottom: 15px;
-  -moz-margin-end: 15px;
+  margin-inline-end: 15px;
   border: 1px solid rgba(128, 128, 128, .5);
   border-radius: 3px;
 }
@@ -428,7 +428,7 @@ a {
 }
 
 .navigation-marker .url {
-  -moz-padding-end: 9px;
+  padding-inline-end: 9px;
   text-decoration: none;
 }
 
