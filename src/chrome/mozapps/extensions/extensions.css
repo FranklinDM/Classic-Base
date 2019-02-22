@@ -9,22 +9,14 @@
   list-style-image: url(chrome://mozapps/skin/extensions/navigation.png);
 }
 
-#forward-btn {
-  -moz-border-start: none;
-}
-
 #back-btn:-moz-locale-dir(ltr),
 #forward-btn:-moz-locale-dir(rtl) {
   -moz-image-region: rect(0, 18px, 18px, 0);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 #back-btn:-moz-locale-dir(rtl),
 #forward-btn:-moz-locale-dir(ltr) {
   -moz-image-region: rect(0, 36px, 18px, 18px);
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 
@@ -42,14 +34,12 @@
 }
 
 #addons-page[warning] .global-warning-container {
-  background-color: rgba(255, 255, 0, 0.1);
-  background-image: url("chrome://mozapps/skin/extensions/stripes-warning.png");
-  background-repeat: repeat-x;
+  background-color: rgb(255, 255, 224);
 }
 
 #detail-view .global-warning {
   padding: 4px 12px;
-  border-bottom: 1px solid #CAD4E0;  
+  border-bottom: 1px solid ThreeDShadow;  
 }
 
 @media (max-width: 600px) {
@@ -90,9 +80,9 @@
 }
 
 .error-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-error.png");
-  width: 16px;
-  height: 15px;
+  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-error.png") !important;
+  width: 16px !important;
+  height: 15px !important;
   margin: 3px 0;
 }
 
@@ -178,6 +168,7 @@
   min-height: 0;
   -moz-box-align: center;
   overflow: hidden;
+  margin-right: 5px;
 }
 
 .category[disabled] {
@@ -197,7 +188,7 @@
 
 .category[selected] {
   -moz-border-top-colors: ThreeDDarkShadow ThreeDShadow;
-  -moz-border-right-colors: transparent;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
   -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
   -moz-border-left-colors: ThreeDDarkShadow ThreeDShadow;
 }
@@ -214,10 +205,9 @@
 }
 
 .category-badge {
-  background-color: #55D4FF;
+  background-color: ThreeDDarkShadow;
   padding: 2px 8px;
   margin: 6px 0;
-  border-radius: 10000px;
   color: #FFF;
   font-weight: bold;
   text-align: center;
@@ -228,9 +218,9 @@
 }
 
 .category-icon {
-  width: 18px;
-  height: 18px;
-  -moz-margin-start: 6px;
+  width: 32px;
+  height: 32px;
+  margin-inline-start: 6px;
 }
 
 #category-search > .category-icon {
@@ -275,6 +265,7 @@
 }
 
 #header-search {
+  -moz-appearance: none;
   margin: 0;
 }
 
@@ -285,16 +276,15 @@
 }
 
 #header-utils-btn {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities");
-  -moz-margin-end: 16px;
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
+  margin-inline-end: 16px;
 }
 
 .view-header {
-  background-color: rgba(251, 252, 253, 0.25);
   padding: 4px;
   margin: 0;
   min-height: 31px;
-  border-bottom: 1px solid #CAD4E0;
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 
@@ -308,8 +298,6 @@
   -moz-appearance: none;
   border: none;
   background-color: transparent;
-  color: #536680;
-  border-radius: 10000px;
   padding: 0 6px;
   margin: 0 6px;
   min-width: 12px !important;
@@ -323,8 +311,10 @@
 
 .sorter[checkState="1"],
 .sorter[checkState="2"] {
-  background-color: rgba(194, 200, 206, 0.4);
-  box-shadow: 1px 1px 2px #B6BBC4 inset;
+  /* set to important because greasemonkey overrides this selector */
+  background-color: #C0C0C0 !important;
+  color: #000 !important;
+  box-shadow: none !important;
 }
 
 .sorter[checkState="1"] {
@@ -336,7 +326,7 @@
 }
 
 .sorter .button-icon {
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
 }
 
 
@@ -354,7 +344,7 @@
 
 .discover-logo {
   list-style-image: url("chrome://mozapps/skin/extensions/discover-logo.png");
-  -moz-margin-end: 15px;
+  margin-inline-end: 15px;
 }
 
 .discover-title {
@@ -385,30 +375,18 @@
 
 .addon {
   color: black;
-  border-top: 2px solid;
-  -moz-border-top-colors: rgba(0, 0, 0, 0.1) rgba(255, 255, 255, 0.1);
+  border-top: 1x solid;
+  -moz-border-top-colors: ThreeDShadow;
   border-bottom: 1px solid;
-  -moz-border-bottom-colors: rgba(255, 255, 255, 0.1);
+  -moz-border-bottom-colors: ThreeDShadow;
   padding: 5px;
   background-origin: border-box;
-}
-
-.view-pane:not(#search-view) .addon:first-of-type,
-#search-view .addon[first] {
-  border-top-width: 1px;
-  -moz-border-top-colors: rgba(255, 255, 255, 0.1);
-}
-
-.view-pane:not(#search-view) .addon:last-of-type,
-#search-view .addon[last] {
-  border-bottom-width: 2px;
-  -moz-border-bottom-colors: rgba(0, 0, 0, 0.1) rgba(255, 255, 255, 0.1);
 }
 
 .details {
   cursor: pointer;
   margin: 0;
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
 }
 
 .icon-container {
@@ -446,10 +424,6 @@
   list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.png");
 }
 
-.addon-view[type="experiment"] .icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/experimentGeneric.png");
-}
-
 .name-container {
   font-size: 150%;
   font-weight: bold;
@@ -468,7 +442,7 @@
 }
 
 .description-container {
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
   -moz-box-align: center;
 }
 
@@ -479,7 +453,7 @@
 .warning,
 .pending,
 .error {
-  -moz-margin-start: 48px;
+  margin-inline-start: 48px;
   font-weight: bold;
   -moz-box-align: center;
 }
@@ -540,7 +514,7 @@
 
 .addon .relnotes-container {
   -moz-box-align: start;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
   height: 0;
   overflow: hidden;
   opacity: 0;
@@ -570,7 +544,7 @@
 }
 
 .addon .relnotes-toggle > .button-box > .button-icon {
-  -moz-padding-start: 4px;
+  padding-inline-start: 4px;
 }
 
 .addon[show-relnotes] .relnotes-toggle {
@@ -587,38 +561,26 @@
 }
 
 .addon-view[notification="warning"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-warning.png"),
-                    linear-gradient(rgba(255, 255, 0, 0.04),
-                                    rgba(255, 255, 0, 0));
-  background-repeat: repeat-x;
+  background-color: rgb(255, 255, 224);
 }
 
 .addon-view[notification="error"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-error.png"),
-                    linear-gradient(rgba(255, 0, 0, 0.04),
-                                    rgba(255, 0, 0, 0));
-  background-repeat: repeat-x;
+  background-color: rgb(255, 204, 204);
 }
 
 .addon-view[pending="enable"],
 .addon-view[pending="upgrade"],
 .addon-view[pending="install"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-positive.png"),
-                    linear-gradient(rgba(0, 255, 0, 0.04),
-                                    rgba(0, 255, 0, 0));
-  background-repeat: repeat-x;
+  background-color: rgb(184, 245, 181);
 }
 
 .addon-view[pending="disable"],
 .addon-view[pending="uninstall"] {
-  background-image: url("chrome://mozapps/skin/extensions/stripes-info-negative.png"),
-                    linear-gradient(rgba(128, 128, 128, 0.04),
-                                    rgba(128, 128, 128, 0));
-  background-repeat: repeat-x;
+  background-color: rgb(211, 211, 211);
 }
 
 .addon[selected] {
-  background-color: rgba(148, 172, 204, 0.39);
+  background-color: rgb(148, 172, 204);
   color: black;
 }
 
@@ -652,7 +614,7 @@
 #search-filter {
   padding: 5px 20px;
   font-size: 120%;
-  border-bottom: 1px solid #CAD4E0;
+  border-bottom: 1px solid ThreeDShadow;
   overflow-x: hidden;
 }
 
@@ -665,12 +627,11 @@
   -moz-appearance: none;
   padding: 0 6px;
   margin: 0 3px;
-  border-radius: 10000px;
 }
 
 .search-filter-radio[selected] {
-  background-color: grey;
-  color: white;
+  background-color: Highlight;
+  color: HighlightText;
 }
 
 .search-filter-radio .radio-check-box1 {
@@ -711,12 +672,12 @@
 #detail-notifications .warning,
 #detail-notifications .pending,
 #detail-notifications .error {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #detail-icon-container {
   width: 64px;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   margin-top: 6px;
 }
 
@@ -734,7 +695,7 @@
 }
 
 #detail-screenshot {
-  -moz-margin-end: 2em;
+  margin-inline-end: 2em;
   max-width: 300px;
   max-height: 300px;
 }
@@ -757,7 +718,7 @@
 }
 
 #detail-desc, #detail-fulldesc {
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
   /* This is necessary to fix layout issues with multi-line descriptions, see
      bug 592712*/
   outline: solid transparent;
@@ -804,7 +765,7 @@
 }
 
 #detail-contrib-btn .button-icon {
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
 }
 
 #detail-contrib-btn:not(:active):hover {
@@ -875,7 +836,7 @@ setting {
   font-size: 90.9%;
   color: graytext;
   margin-top: -2px;
-  -moz-margin-start: 2em;
+  margin-inline-start: 2em;
   white-space: pre-wrap;
 }
 
@@ -894,8 +855,8 @@ menulist { /* Fixes some styling inconsistencies */
 /*** creator ***/
 
 .creator > label {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .creator > .text-link {
@@ -907,7 +868,7 @@ menulist { /* Fixes some styling inconsistencies */
 /*** rating ***/
 
 .meta-rating {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
   padding-top: 2px;
 }
 
@@ -924,15 +885,12 @@ menulist { /* Fixes some styling inconsistencies */
 /*** download progress ***/
 
 .download-progress {
-  background-color: rgba(151,152,153,.05);
-  background-image: linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
-                                    rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3));
-  background-clip: padding-box;
-  border-radius: 3px;
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
-              0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+  -moz-border-right-colors: ThreeDHighlight -moz-Dialog;
+  -moz-border-bottom-colors: ThreeDHighlight -moz-Dialog;
+  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+  background-color: -moz-Dialog;
   width: 200px;
   height: 21px;
   margin: 0 8px;
@@ -951,20 +909,14 @@ menulist { /* Fixes some styling inconsistencies */
 .download-progress[mode="undetermined"] .end-cap,
 .download-progress .progress .progress-bar {
   -moz-appearance: none;
-  background-image: linear-gradient(#92DDA0, #6FC483 49%, #5EB272 51%, #80CE91);
-  margin-top: -1px;
-  margin-bottom: -1px;
-  border: 1px solid;
-  border-color: #358942 #317F3D #2E773A;
+  background-color: darkblue;
 }
 
 .download-progress .start-cap {
-  -moz-margin-start: -1px;
   -moz-border-end-width: 0;
 }
 
 .download-progress .end-cap {
-  -moz-margin-end: -1px;
   -moz-border-start-width: 0px !important;
 }
 
@@ -987,33 +939,21 @@ menulist { /* Fixes some styling inconsistencies */
   width: 4px;
 }
 
-.download-progress .start-cap:-moz-locale-dir(ltr),
-.download-progress .end-cap:-moz-locale-dir(rtl) {
-  border-radius: 3px 0 0 3px;
-}
-
-.download-progress .end-cap:-moz-locale-dir(ltr),
-.download-progress .start-cap:-moz-locale-dir(rtl) {
-  border-radius: 0 3px 3px 0;
-}
-
 .download-progress .cancel {
-  -moz-appearance: none;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  padding: 3px;
-  border-radius: 3px;
+  -moz-appearance: none;    
+  border: none;
+  margin: 0;
   min-width: 0;
-  margin: 3px;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 .download-progress .cancel:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
-.download-progress .cancel:active:hover {
-  box-shadow: inset rgba(0, 0, 0, 0.5) 1px 1px 2px;
+.download-progress .cancel:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 .download-progress .cancel .button-box {
@@ -1026,19 +966,11 @@ menulist { /* Fixes some styling inconsistencies */
 }
 
 .download-progress .cancel .button-icon {
-  -moz-margin-start: 0;
-}
-
-.download-progress .cancel {
-  list-style-image: url('chrome://mozapps/skin/extensions/cancel.png');
+  margin-inline-start: 0;
 }
 
 .download-progress .status-container {
   -moz-box-align: center;
-}
-
-.download-progress .status {
-  text-shadow: #FFF 0 0 2px;
 }
 
 /*** install status ***/
@@ -1107,6 +1039,26 @@ button.button-link:not([disabled="true"]):active:hover {
   box-shadow: none;
 }
 
+.header-button {
+  -moz-appearance: none;
+  border: 2px solid;
+  -moz-border-top-colors:    ThreeDHighlight  ThreeDHighlight;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors:   ThreeDHighlight  ThreeDHighlight;
+  -moz-border-right-colors:  ThreeDDarkShadow ThreeDShadow;
+  background-color: ThreeDFace;
+  color: ButtonText;
+  text-shadow: none;
+}
+
+.header-button:hover:active,
+.header-button[open] {
+  -moz-border-bottom-colors: ThreeDHighlight  ThreeDHighlight;
+  -moz-border-top-colors:    ThreeDDarkShadow ThreeDShadow;
+  -moz-border-right-colors:  ThreeDHighlight  ThreeDHighlight;
+  -moz-border-left-colors:   ThreeDDarkShadow ThreeDShadow;
+}
+
 .header-button[disabled="true"] {
   opacity: 0.8;
 }
@@ -1117,4 +1069,19 @@ button.button-link:not([disabled="true"]):active:hover {
 
 .header-button > .toolbarbutton-text {
   display: none;
+}
+
+
+/*** notification bar ***/
+
+#addons-notifications > notification {
+  border: 1px solid #000;
+  margin-bottom: 1em;
+}
+
+
+/*** TGS ***/
+
+page[aios-inSidebar] .main-content {
+  border: none;
 }
