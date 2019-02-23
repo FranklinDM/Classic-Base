@@ -12,6 +12,7 @@
 
 menu,
 menuitem,
+menucaption,
 .splitmenu-menuitem {
   -moz-appearance: none;
   -moz-box-align: center;
@@ -70,6 +71,12 @@ menuitem.spell-suggestion {
   font-weight: inherit;
   margin-inline-start: 2px !important;
   padding-inline-end: 2px;
+}
+
+menucaption > .menu-text,
+menucaption > .menu-iconic-text {
+  font-weight: bold;
+  padding-inline-start: 0 !important;
 }
 
 .menu-description {
@@ -157,7 +164,8 @@ menubar > menu:-moz-window-inactive {
 /* ::::: menu/menuitems in popups ::::: */
 
 menupopup > menu,
-menupopup > menuitem {
+menupopup > menuitem,
+menupopup > menucaption {
   max-width: 42em;
 }
 
@@ -170,9 +178,8 @@ menuitem[_moz-menuactive="true"],
 
 /* ::::: menu/menuitems in menulist popups ::::: */
 
-.menulist-menupopup > menuitem,
 menulist > menupopup > menuitem,
-.menulist-menupopup > menu,
+menulist > menupopup > menucaption,
 menulist > menupopup > menu {
   -moz-appearance: none !important;
   border: 1px solid transparent;
@@ -183,25 +190,20 @@ menulist > menupopup > menu {
   color: -moz-FieldText;
 }
 
-.menulist-menupopup > menuitem[_moz-menuactive="true"],
 menulist > menupopup > menuitem[_moz-menuactive="true"],
-.menulist-menupopup > menu[_moz-menuactive="true"],
 menulist > menupopup > menu[_moz-menuactive="true"] {
   background-color: highlight;
   color: highlighttext;
 }
 
-.menulist-menupopup > menuitem > .menu-iconic-left,
 menulist > menupopup > menuitem > .menu-iconic-left,
-.menulist-menupopup > menu > .menu-iconic-left,
+menulist > menupopup > menucaption > .menu-iconic-left,
 menulist > menupopup > menu > .menu-iconic-left {
   display: none;
-  padding-top: 0px;
 }
 
-.menulist-menupopup > menuitem > label,
 menulist > menupopup > menuitem > label,
-.menulist-menupopup > menu > label,
+menulist > menupopup > menucaption > label,
 menulist > menupopup > menu > label {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -220,9 +222,11 @@ menulist > menupopup > menuitem[disabled="true"]:not([_moz-menuactive="true"]):-
   text-shadow: none;
 }
 
-menulist > menupopup > menuitem:not(.menuitem-iconic) > .menu-iconic-text {
+menulist > menupopup > :-moz-any(menuitem, menucaption):not(.menuitem-iconic) > .menu-iconic-text {
   margin: 0 !important;
 }
+
+/* ::::: checkbox and radio menuitems ::::: */
 
 menuitem[checked="true"] {
   list-style-image: url("chrome://global/skin/menu/menu-check.gif");
@@ -233,8 +237,6 @@ menuitem[checked="true"][disabled="true"][_moz-menuactive="true"] {
   list-style-image: url("chrome://global/skin/menu/menu-check-disabled.gif");
 }
 
-/* ::::: checkbox and radio menuitems ::::: */
-
 menuitem[checked="true"][type="radio"] {
   list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
 }
@@ -243,6 +245,15 @@ menuitem[checked="true"][type="radio"][disabled="true"],
 menuitem[checked="true"][type="radio"][disabled="true"][_moz-menuactive="true"] {
   list-style-image: url("chrome://global/skin/menu/menu-radio-disabled.gif");
 }
+
+menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+  /* prevent .menu-iconic-icon from enforcing a minimal height of 16px (see bug 411064)
+     XXXzeniko apply that .menu-iconic-icon rule only for children of .menu-iconic */
+  display: none;
+}
+
 /* ::::: menuseparator ::::: */
 
 menuseparator {
@@ -251,12 +262,7 @@ menuseparator {
   border-top: 1px solid ThreeDShadow;
 }
 
-menuseparator[collapsed="true"] {
-  margin: 0 !important;
-}
-
-menulist > menupopup > menuseparator,
-.menulist-menupopup > menuseparator {
+menulist > menupopup > menuseparator {
   padding: 6px 0 5px 0;
   border-top: 1px solid #000000;
   border-bottom: none;
@@ -267,12 +273,4 @@ menulist > menupopup > menuseparator,
 .autocomplete-history-popup > menuitem {
   max-width: none !important;
   font: message-box;
-}
-
-/* ::::: tree column picker ::::: */
-
-.treecell-popupcell-menu {
-  margin-inline-start: -2px;
-  list-style-image: url("chrome://global/skin/columnselect.gif");
-  -moz-image-region: auto;
 }
