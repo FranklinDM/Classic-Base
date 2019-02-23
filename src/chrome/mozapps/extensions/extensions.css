@@ -815,8 +815,7 @@ setting {
 }
 
 #detail-view[active="false"]:not([pending]):not([notification]) {
-  background-image: linear-gradient(rgba(135, 135, 135, 0.1),
-                                    rgba(135, 135, 135, 0));
+  background-color: rgba(135, 135, 135, 0.1);
 }
 
 setting[first-row="true"] {
