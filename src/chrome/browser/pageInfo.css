@@ -150,16 +150,6 @@ groupbox tree {
   line-height: 2em;
 }
 
-@media (-moz-os-version: windows-win10) {
-  groupbox.collapsable caption .caption-icon {
-    background-image: url("chrome://global/skin/tree/twisty-10.svg#open");
-  }
-  
-  groupbox.collapsable[closed="true"] caption .caption-icon { 
-    background-image: url("chrome://global/skin/tree/twisty-10.svg#clsd");
-  }
-}
-
 /* Media Tab */
 #imagetree {
   min-height: 10em;
