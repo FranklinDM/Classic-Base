@@ -7,8 +7,16 @@
 
 /* File Field Widget */
 filefield {
+  -moz-appearance: none;
   margin: 2px 4px;
-  -moz-appearance: textfield;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  padding-inline-start: 4px;
+  background-color: -moz-Dialog;
+  color: -moz-FieldText;
 }
 
 .fileFieldContentBox {

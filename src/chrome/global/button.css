@@ -108,8 +108,7 @@ button[type="menu-button"] {
   border: none;
 }
 
-.button-menu-dropmarker,
-.button-menubutton-dropmarker {
+.button-menu-dropmarker {
   -moz-appearance: none !important;
   margin: 1px;
   background-color: transparent;
@@ -118,11 +117,8 @@ button[type="menu-button"] {
   height: 11px;
 }
 
-.button-menubutton-dropmarker[open="true"] {
-  margin-top: 2px;
-  margin-bottom: 0px;
-  margin-inline-start: 2px;
-  margin-inline-end: 0px;
+.button-menubutton-dropmarker {
+  margin: 1px 5px 3px -6px;
 }
 
 /* ::::: plain buttons ::::: */
@@ -145,14 +141,4 @@ button[type="disclosure"] {
 
 button[type="disclosure"][open="true"] {
   list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
-}
-
-@media (-moz-os-version: windows-win10) {
-  button[type="disclosure"] {
-    list-style-image: url("chrome://global/skin/tree/twisty-10.svg#clsd");
-  }
-  
-  button[type="disclosure"][open="true"] {
-    list-style-image: url("chrome://global/skin/tree/twisty-10.svg#open");
-  }
 }

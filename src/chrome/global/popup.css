@@ -124,7 +124,7 @@ panel[type="arrow"][side="right"] {
 /* ::::: tooltip ::::: */
 
 tooltip {
-  -moz-appearance: tooltip;
+  -moz-appearance: none;
   margin-top: 21px;
   border: 1px solid InfoText;
   padding: 2px 3px;
