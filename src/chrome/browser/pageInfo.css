@@ -136,11 +136,6 @@ groupbox.collapsable[closed="true"] caption .caption-icon {
   background-image: url("chrome://global/skin/tree/twisty-clsd.png");
 }
 
-groupbox tree { 
-  margin: 0 3px;
-  border: none;
-}
-
 #securityBox description { 
   margin-inline-start: 10px;
 }
