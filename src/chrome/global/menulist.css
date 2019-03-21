@@ -60,7 +60,7 @@ menulist[disabled="true"]:hover:active > .menulist-dropmarker {
   padding: 1px;
 }
 
-menulist:hover:active > .menulist-dropmarker {
+menulist[open="true"] > .menulist-dropmarker {
   -moz-border-top-colors: ThreeDShadow ThreeDFace;
   -moz-border-right-colors: ThreeDShadow ThreeDFace;
   -moz-border-bottom-colors: ThreeDShadow ThreeDFace;
