@@ -134,3 +134,9 @@ listheader[sortable="true"]:hover:active {
   min-height: 13px;
   background: -moz-Field no-repeat 50% 50%;
 }
+
+/* ..... checked state ..... */
+
+.listcell-check[checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
