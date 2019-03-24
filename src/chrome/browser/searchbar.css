@@ -43,12 +43,8 @@
 }
 
 .searchbar-dropmarker-image {
-  list-style-image: url("chrome://browser/skin/searchbar-dropdown-arrow.png");
-  -moz-image-region: rect(0, 13px, 11px, 0);
-}
-
-.searchbar-engine-button[open="true"] > .searchbar-dropmarker-image {
-  -moz-image-region: rect(0, 26px, 11px, 13px);
+  margin-inline-start: 2px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
 }
 
 
