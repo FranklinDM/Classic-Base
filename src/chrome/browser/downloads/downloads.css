@@ -32,13 +32,6 @@
   cursor: pointer;
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
-  #downloadsHistory {
-    color: -moz-nativehyperlinktext;
-  }
-}
-
 #downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus {
   outline: 1px -moz-dialogtext dotted;
   outline-offset: -1px;
@@ -63,24 +56,6 @@
 #downloadsFooter:hover:active {
   background-color: hsla(210,4%,10%,.1);
   box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset;
-}
-
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
-  @media (-moz-windows-default-theme) {
-    #downloadsFooter {
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-      transition-duration: 0s;
-    }
-
-    #downloadsFooter,
-    #downloadsFooter:hover,
-    #downloadsFooter:hover:active {
-      background-color: #f1f5fb;
-      box-shadow: 0px 1px 2px rgb(204,214,234) inset;
-    }
-  }
 }
 
 /*** Downloads Summary and List items ***/
@@ -119,22 +94,8 @@ richlistitem[type="download"] {
   padding: 8px;
 }
 
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  richlistitem[type="download"] {
-    border: 1px solid transparent;
-    border-bottom: 1px solid hsl(213,40%,90%);
-  }
-}
-
 richlistitem[type="download"]:first-child {
   border-top: 1px solid transparent;
-}
-
-@media (-moz-windows-default-theme) {
-  richlistitem[type="download"]:last-child {
-    border-bottom: 1px solid transparent;
-  }
 }
 
 #downloadsPanel[keyfocus] > #downloadsListBox:focus > richlistitem[type="download"][selected] {
@@ -221,35 +182,6 @@ richlistitem[type="download"]:first-child {
   background-color: hsla(210,4%,10%,.15);
   outline: 1px solid hsla(210,4%,10%,.15);
   box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
-}
-
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
-  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-    border-radius: 3px;
-    outline: 0;
-    border-top: 1px solid hsla(0,0%,100%,.2);
-    border-bottom: 1px solid hsla(0,0%,0%,.2);
-    background-color: Highlight;
-    color: HighlightText;
-  }
-
-  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover:active {
-    background-color: Highlight;
-    outline: 0;
-    box-shadow: none;
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-vista),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover {
-    border: 1px solid hsl(213,45%,65%);
-    box-shadow: 0 0 0 1px hsla(0,0%,100%,.5) inset,
-                0 1px 0 hsla(0,0%,100%,.3) inset;
-    background-image: linear-gradient(hsl(212,86%,92%), hsl(212,91%,86%));
-    color: black;
-  }
 }
 
 /*** Button icons ***/
@@ -342,15 +274,6 @@ toolbar[brighttext] #downloads-indicator-icon {
 toolbar[brighttext] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
   background: -moz-image-rect(var(--toolbarbutton-inverted-image),
                               0, 108, 18, 90) center no-repeat;
-}
-
-@media (-moz-windows-compositor) {
-  :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:not(:-moz-lwtheme),
-  #TabsToolbar[tabsontop=true] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:not(:-moz-lwtheme),
-  #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter:not(:-moz-lwtheme) {
-    background: -moz-image-rect(var(--toolbarbutton-glass-image),
-                                0, 108, 18, 90) center no-repeat;
-  }
 }
 
 #downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
