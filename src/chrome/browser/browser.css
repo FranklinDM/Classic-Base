@@ -409,7 +409,11 @@ menuitem.bookmark-item {
 
 .bookmark-item[container][livemark] {
   list-style-image: url("chrome://browser/skin/livemark-folder.png");
-  -moz-image-region: auto;
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.bookmark-item[container][livemark][open] {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
 }
 
 .bookmark-item[container][livemark] .bookmark-item {

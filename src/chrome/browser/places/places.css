@@ -78,7 +78,12 @@ treechildren::-moz-tree-image(title, open) {
 
 treechildren::-moz-tree-image(title, container, livemark) {
   list-style-image: url("chrome://browser/skin/livemark-folder.png");
-  -moz-image-region: auto;
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+treechildren::-moz-tree-image(title, container, livemark, open) {
+  list-style-image: url("chrome://browser/skin/livemark-folder.png");
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks) {
