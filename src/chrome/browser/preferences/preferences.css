@@ -4,7 +4,7 @@
 
 /* Global Styles */
 #BrowserPreferences radio[pane] {
-  list-style-image: url("chrome://browser/skin/preferences/Options.png"); 
+  list-style-image: url("chrome://browser/skin/preferences/Options.png");
   padding: 5px 3px 1px;
 }
 
@@ -37,7 +37,7 @@ radio[pane=paneAdvanced] {
 }
 
 radio[pane=paneSync] {
-  list-style-image: url("chrome://browser/skin/preferences/Options-sync.png") !important;
+  -moz-image-region: rect(0, 256px, 32px, 224px);
 }
 
 /* Applications Pane */
@@ -136,4 +136,3 @@ radio[pane=paneSync] {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-
