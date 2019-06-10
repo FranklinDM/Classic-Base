@@ -234,49 +234,90 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
   position: relative;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar[brighttext] #downloads-indicator[counter] > #downloads-indicator-anchor {
-  /* Use a dark download button when appropriate to improve text legibility */
-  background: hsla(94,56%,18%,.3) padding-box;
-  background-image: linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,0%,.4));
-  border-color: hsla(29,12%,90%,.2) hsla(29,12%,90%,.2) hsla(29,12%,90%,.2);
-  box-shadow: 0 1px hsla(0,0%,0%,.05) inset,
-              0 1px hsla(29,12%,90%,.05),
-              0 0 2px hsla(29,12%,90%,.05);
-}
-
 /*** Main indicator icon ***/
 
 #downloads-indicator-icon {
-  background: -moz-image-rect(var(--toolbarbutton-image),
-                              0, 108, 18, 90) center no-repeat;
-  min-width: 18px;
-  min-height: 18px;
+  min-width: 24px;
+  min-height: 24px;
 }
 
-toolbar[brighttext] #downloads-indicator-icon {
-  background: -moz-image-rect(var(--toolbarbutton-inverted-image),
-                              0, 108, 18, 90) center no-repeat;
-}
-
-#downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background-image: url("chrome://browser/skin/downloads/download-glow.png");
+toolbar[iconsize="small"] #downloads-indicator-icon {
+  min-width: 16px;
+  min-height: 16px;
 }
 
 /* In the next few rules, we use :not([counter]) as a shortcut that is
    equivalent to -moz-any([progress], [paused]). */
 
 #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(var(--toolbarbutton-image),
-                              0, 108, 18, 90) center no-repeat;
   background-size: 12px;
 }
 
-toolbar[brighttext] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(var(--toolbarbutton-inverted-image),
-                              0, 108, 18, 90) center no-repeat;
+toolbar[iconsize="small"] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background-size: 12px;
 }
 
-#downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+/*** Main indicator icon: normal/hover/active states ***/
+
+/* Large indicator icon */
+
+#downloads-indicator-icon,
+#downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background: -moz-image-rect(var(--toolbarbutton-large-image), 0, 144, 24, 120) center no-repeat;
+}
+toolbar[brighttext] #downloads-indicator-icon,
+toolbar[brighttext] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background: -moz-image-rect(var(--toolbarbutton-large-inverted-image), 0, 144, 24, 120) center no-repeat;
+}
+
+#downloads-indicator[open="true"] #downloads-indicator-icon,
+#downloads-indicator:hover #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-large-image), 24, 144, 48, 120) center no-repeat;
+}
+toolbar[brighttext] #downloads-indicator[open="true"] #downloads-indicator-icon,
+toolbar[brighttext] #downloads-indicator:hover #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-large-inverted-image), 24, 144, 48, 120) center no-repeat;
+}
+
+#downloads-indicator:hover:active #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-large-image), 72, 144, 96, 120) center no-repeat;
+}
+toolbar[brighttext] #downloads-indicator:hover:active #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-large-inverted-image), 72, 144, 96, 120) center no-repeat;
+}
+
+#downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+#downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background-image: url("chrome://browser/skin/downloads/download-glow-large.png");
+}
+
+/* Small indicator icon */
+
+toolbar[iconsize="small"] #downloads-indicator-icon,
+toolbar[iconsize="small"] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background: -moz-image-rect(var(--toolbarbutton-image), 0, 96, 16, 80) center no-repeat;
+}
+toolbar[iconsize="small"][brighttext] #downloads-indicator-icon,
+toolbar[iconsize="small"][brighttext] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background: -moz-image-rect(var(--toolbarbutton-inverted-image), 0, 96, 16, 80) center no-repeat;
+}
+
+toolbar[iconsize="small"] #downloads-indicator:hover #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-image), 16, 96, 32, 80) center no-repeat;
+}
+toolbar[iconsize="small"][brighttext] #downloads-indicator:hover #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-inverted-image), 16, 96, 32, 80) center no-repeat;
+}
+
+toolbar[iconsize="small"] #downloads-indicator:hover:active #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-image), 48, 96, 64, 80) center no-repeat;
+}
+toolbar[iconsize="small"][brighttext] #downloads-indicator:hover:active #downloads-indicator-icon {
+  background: -moz-image-rect(var(--toolbarbutton-inverted-image), 48, 96, 64, 80) center no-repeat;
+}
+
+toolbar[iconsize="small"] #downloads-indicator:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+toolbar[iconsize="small"] #downloads-indicator[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
   background-image: url("chrome://browser/skin/downloads/download-glow.png");
 }
 
