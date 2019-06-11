@@ -302,9 +302,11 @@ toolbar[iconsize="small"][brighttext] #downloads-indicator:not([counter]) > #dow
   background: -moz-image-rect(var(--toolbarbutton-inverted-image), 0, 96, 16, 80) center no-repeat;
 }
 
+toolbar[iconsize="small"] #downloads-indicator[open="true"] #downloads-indicator-icon,
 toolbar[iconsize="small"] #downloads-indicator:hover #downloads-indicator-icon {
   background: -moz-image-rect(var(--toolbarbutton-image), 16, 96, 32, 80) center no-repeat;
 }
+toolbar[iconsize="small"][brighttext] #downloads-indicator[open="true"] #downloads-indicator-icon,
 toolbar[iconsize="small"][brighttext] #downloads-indicator:hover #downloads-indicator-icon {
   background: -moz-image-rect(var(--toolbarbutton-inverted-image), 16, 96, 32, 80) center no-repeat;
 }
