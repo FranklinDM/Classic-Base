@@ -24,25 +24,6 @@
   cursor: default;
 }
 
-@media (-moz-windows-default-theme) {
-  .sidebar-placesTree {
-    background-color: transparent;
-    border-top: none;
-  }
-
-  .sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
-    text-decoration: none;
-  }
-
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
-    #bookmarksPanel,
-    #history-panel {
-      background-color: #EEF3FA;
-    }
-  }
-}
-
 /* Trees */
 treechildren::-moz-tree-image(title) {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
@@ -109,6 +90,11 @@ treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks) {
 /* query-nodes should be styled even if they're not expandable */
 treechildren::-moz-tree-image(title, query) {
   list-style-image: url("chrome://browser/skin/places/query.png");
+  -moz-image-region: auto;
+}
+
+treechildren::-moz-tree-image(title, query, open) {
+  list-style-image: url("chrome://browser/skin/places/query-open.png");
   -moz-image-region: auto;
 }
 
