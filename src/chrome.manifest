@@ -1,4 +1,12 @@
-skin	global			classic-base		chrome/global/
-skin	browser			classic-base		chrome/browser/
-skin	mozapps			classic-base		chrome/mozapps/
-skin	communicator	classic-base		chrome/communicator/
+# Toolkit
+skin    global                  classic-base        chrome/global/
+skin    mozapps                 classic-base        chrome/mozapps/
+
+# Application-specific
+skin    browser                 classic-base        chrome/browser/
+skin    messenger               classic-base        chrome/messenger/
+skin    messenger-newsblog      classic-base        chrome/messenger-newsblog/
+skin    editor                  classic-base        chrome/editor/
+
+# Shared
+skin    communicator            classic-base        chrome/communicator/
