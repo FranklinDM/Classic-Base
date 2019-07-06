@@ -7,6 +7,7 @@ skin    browser                 classic-base        chrome/browser/
 skin    messenger               classic-base        chrome/messenger/
 skin    messenger-newsblog      classic-base        chrome/messenger-newsblog/
 skin    editor                  classic-base        chrome/editor/
+skin    ambassador              classic-base        chrome/ambassador/
 
 # Shared
 skin    communicator            classic-base        chrome/communicator/

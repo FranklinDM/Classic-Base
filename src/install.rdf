@@ -36,5 +36,13 @@
                 <em:maxVersion>52.*</em:maxVersion>
             </Description>
         </em:targetApplication>
+        <em:targetApplication>
+            <!-- Ambassador -->
+            <Description>
+                <em:id>{4523665a-317f-4a66-9376-3763d1ad1978}</em:id>
+                <em:minVersion>1.1.0</em:minVersion>
+                <em:maxVersion>1.1.0</em:maxVersion>
+            </Description>
+        </em:targetApplication>
     </Description>
 </RDF>
