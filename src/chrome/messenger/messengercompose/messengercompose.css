@@ -55,13 +55,13 @@
 }
 
 #attachmentReminderText {
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
   cursor: pointer;
 }
 
 #attachmentKeywords {
   font-weight: bold;
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@
 /* XXX I should really have a selector rule here to select just .listcell-icon objects underneath the attachmentList listbox */
 
 .listcell-icon {
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
   margin-top: 2px;
 }
 
@@ -135,7 +135,7 @@
   -moz-appearance: none;
   -moz-box-align: stretch;
   margin: 1px 0;
-  -moz-margin-start: 7px;
+  margin-inline-start: 7px;
   list-style-image: none;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .aw-menulist > .menulist-label-box > .menulist-icon {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 .aw-menulist > .menulist-label-box > .menulist-label {
@@ -576,8 +576,8 @@ toolbarbutton.formatting-button {
 #TextColorButton {
   margin-top: 2px;
   margin-bottom: 9px;
-  -moz-margin-start: 2px;
-  -moz-margin-end: 9px;
+  margin-inline-start: 2px;
+  margin-inline-end: 9px;
 }
 
 #TextColorButton[color="mixed"] {
@@ -588,8 +588,8 @@ toolbarbutton.formatting-button {
 #BackgroundColorButton {
   margin-top: 9px;
   margin-bottom: 2px;
-  -moz-margin-start: 9px;
-  -moz-margin-end: 2px;
+  margin-inline-start: 9px;
+  margin-inline-end: 2px;
 }
 
 #HighlightColorButton {
@@ -636,7 +636,7 @@ toolbarbutton.formatting-button {
 }
 
 .ab-closebutton > .toolbarbutton-icon {
-  -moz-margin-end: 0px; /* override toolkit's default value */
+  margin-inline-end: 0px; /* override toolkit's default value */
 }
 
 #findbar-replaceButton > .toolbarbutton-icon {
@@ -663,7 +663,7 @@ toolbox[labelalign="end"] .toolbarbutton-1 {
 }
 
 toolbox[labelalign="end"] > toolbar[mode="full"] .toolbarbutton-1 .toolbarbutton-text {
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
 }
 
 toolbox[labelalign="end"] > toolbar[mode="full"] deck .toolbarbutton-text {
@@ -1054,25 +1054,25 @@ toolbar[iconsize="small"] #button-print:not([disabled="true"]):hover:active {
 
 treechildren::-moz-tree-image(local-abook) {
    moz-margin-start: 2px;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.png");
 }
 
 treechildren::-moz-tree-image(remote-abook) {
-  -moz-margin-start: 2px;
-  -moz-margin-end: 5px;
+  margin-inline-start: 2px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.png");
 }
 
 treechildren::-moz-tree-image(remote-err) {
-  -moz-margin-start: 2px;
-  -moz-margin-end: 5px;
+  margin-inline-start: 2px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook-error.png");
 }
 
 treechildren::-moz-tree-image(subscribed-news) {
-  -moz-margin-start: 2px;
-  -moz-margin-end: 5px;
+  margin-inline-start: 2px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://messenger/skin/icons/folder.png");
   -moz-image-region: rect(0 160px 16px 144px);
 }
