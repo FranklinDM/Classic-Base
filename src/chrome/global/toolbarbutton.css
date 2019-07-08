@@ -182,7 +182,17 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 .toolbarbutton-menubutton-dropmarker {
   -moz-appearance: none;
   padding: 3px 7px;
-  border: none;
+  border: 1px solid transparent;
   background-color: transparent;
   width: auto;
+}
+
+toolbarbutton[type="menu-button"][open="true"]:not([checked="true"]):not([disabled="true"]) .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:not([checked="true"]):not(:active):not([disabled="true"]) .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:not([disabled="true"]) .toolbarbutton-menubutton-dropmarker {
+  border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
+}
+
+toolbarbutton[type="menu-button"][open="true"]:not([disabled="true"]) .toolbarbutton-menubutton-dropmarker {
+  border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
 }
