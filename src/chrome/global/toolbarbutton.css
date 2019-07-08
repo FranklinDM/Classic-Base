@@ -58,15 +58,8 @@ toolbarbutton[open="true"] {
 }
 
 toolbarbutton[disabled="true"] {
-  color: GrayText;
-  text-shadow: none;
-}
-
-@media (-moz-windows-classic) {
-  toolbarbutton[disabled="true"] {
-    color: ThreeDShadow;
-    text-shadow: 1px 1px ThreeDHighlight;
-  }
+  color: ThreeDShadow;
+  text-shadow: 1px 1px ThreeDHighlight;
 }
 
 toolbarbutton[checked="true"]:not([disabled="true"]) {
