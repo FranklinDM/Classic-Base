@@ -76,11 +76,6 @@ treechildren::-moz-tree-cell-text(imapdeleted) {
 }
 
 .treecol-image image {
-  -moz-padding-end: 4px;
-  padding-bottom: 3px;
-}
-
-:-moz-system-metric(windows-classic) .treecol-image image {
   -moz-padding-end: 1px;
   padding-bottom: 2px;
 }
