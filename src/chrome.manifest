@@ -11,3 +11,6 @@ skin    ambassador              classic-base        chrome/ambassador/
 
 # Shared
 skin    communicator            classic-base        chrome/communicator/
+
+# Another loading icon (with the same dimensions, seemingly redundant) is referenced by some applications
+override    chrome://global/skin/icons/loading.png    chrome://global/skin/icons/loading_16.png
