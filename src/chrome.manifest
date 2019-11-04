@@ -1,8 +1,12 @@
+#------------------------------------------------------------------------------
 # Toolkit
+#------------------------------------------------------------------------------
 skin    global                  classic-base        chrome/global/
 skin    mozapps                 classic-base        chrome/mozapps/
 
+#------------------------------------------------------------------------------
 # Application
+#------------------------------------------------------------------------------
 skin    browser                 classic-base        chrome/browser/
 skin    messenger               classic-base        chrome/messenger/
 skin    messenger-newsblog      classic-base        chrome/messenger-newsblog/
@@ -10,5 +14,19 @@ skin    editor                  classic-base        chrome/editor/
 skin    ambassador              classic-base        chrome/ambassador/
 skin    communicator            classic-base        chrome/communicator/
 
+#------------------------------------------------------------------------------
+# OS-specific skin
+#------------------------------------------------------------------------------
+# Fallback skin for unmatched systems
+skin    os_target               classic-base        chrome/os_target/windows/
+
+# Skin content overrides
+skin    os_target               classic-base        chrome/os_target/windows/     os=WINNT
+skin    os_target               classic-base        chrome/os_target/mac/         os=Darwin
+skin    os_target               classic-base        chrome/os_target/linux/       os=Linux
+
+#------------------------------------------------------------------------------
+# Overrides
+#------------------------------------------------------------------------------
 # Another loading icon (with the same dimensions, seemingly redundant) is referenced by some applications
 override    chrome://global/skin/icons/loading.png    chrome://global/skin/icons/loading_16.png
