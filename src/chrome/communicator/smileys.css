@@ -9,7 +9,7 @@
 
 @namespace url("http://www.w3.org/1999/xhtml");
 
-/* ::::: we represent smilies instead of text in spans ::::: */
+/* ::::: we also represent smilies inside of spans ::::: */
 
 .moz-smiley-s1,
 .moz-smiley-s2,
@@ -68,7 +68,7 @@
 
 /* tongue */
 .moz-smiley-s4:before {
-  content: url("chrome://communicator/skin/icons/smileys/smiley-tongue-out.png");
+  content: url("chrome://communicator/skin/icons/smileys/smiley-tongue.png");
 }
 
 /* laughing */
@@ -76,9 +76,9 @@
   content: url("chrome://communicator/skin/icons/smileys/smiley-laughing.png");
 }
 
-/* embarassed */
+/* embarrassed */
 .moz-smiley-s6:before {
-  content: url("chrome://communicator/skin/icons/smileys/smiley-embarassed.png");
+  content: url("chrome://communicator/skin/icons/smileys/smiley-embarrassed.png");
 }
 
 /* undecided */
@@ -88,7 +88,7 @@
 
 /* surprise */
 .moz-smiley-s8:before {
-  content: url("chrome://communicator/skin/icons/smileys/smiley-surprised.png");
+  content: url("chrome://communicator/skin/icons/smileys/smiley-surprise.png");
 }
 
 /* kiss */
@@ -108,12 +108,12 @@
 
 /* money */
 .moz-smiley-s12:before {
-  content: url("chrome://communicator/skin/icons/smileys/smiley-money-mouth.png");
+  content: url("chrome://communicator/skin/icons/smileys/smiley-money.png");
 }
 
 /* foot */
 .moz-smiley-s13:before {
-  content: url("chrome://communicator/skin/icons/smileys/smiley-foot-in-mouth.png");
+  content: url("chrome://communicator/skin/icons/smileys/smiley-foot.png");
 }
 
 /* innocent */

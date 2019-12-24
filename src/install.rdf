@@ -37,6 +37,14 @@
             </Description>
         </em:targetApplication>
         <em:targetApplication>
+            <!-- Borealis Navigator -->
+            <Description>
+                <em:id>{a3210b97-8e8a-4737-9aa0-aa0e607640b9}</em:id>
+                <em:minVersion>1.0.0a1</em:minVersion>
+                <em:maxVersion>1.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+        <em:targetApplication>
             <!-- Ambassador -->
             <Description>
                 <em:id>{4523665a-317f-4a66-9376-3763d1ad1978}</em:id>

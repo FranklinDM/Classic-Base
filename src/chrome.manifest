@@ -13,6 +13,7 @@ skin    messenger-newsblog      classic-base        chrome/messenger-newsblog/
 skin    editor                  classic-base        chrome/editor/
 skin    ambassador              classic-base        chrome/ambassador/
 skin    communicator            classic-base        chrome/communicator/
+skin    navigator               classic-base        chrome/navigator/
 
 #------------------------------------------------------------------------------
 # OS-specific skin
