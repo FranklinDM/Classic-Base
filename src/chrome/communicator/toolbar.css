@@ -8,7 +8,7 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-toolbar[type="menubar"]:not([autohide="true"]):not([xpfe="false"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
+toolbar[type="menubar"]:not([autohide="true"]):not([xpfe="false"]):-moz-system-metric(menubar-drag) {
   -moz-binding: url("chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-drag");
 }
 

@@ -130,20 +130,6 @@ toolbar[iconsize="small"] > #print-button[disabled="true"] {
   -moz-image-region: rect(0 79px 19px 60px) !important;
 }
 
-/* ::::: lightweight themes ::::: */
-
-toolbar button:-moz-lwtheme,
-toolbar menulist:-moz-lwtheme:not([open="true"]),
-toolbar textbox:-moz-lwtheme:not([focused="true"]) {
-  opacity: .8;
-}
-
-treecols:-moz-lwtheme {
-  text-shadow: none;
-  color: -moz-dialogtext;
-  background-color: -moz-dialog;
-}
-
 /* ::::: notification bars ::::: */
 
 .messageImage[value="refresh-blocked"] {
@@ -178,9 +164,7 @@ treecols:-moz-lwtheme {
 .messageImage[value="addon-install-complete"],
 .messageImage[value="addon-install-disabled"],
 .messageImage[value="addon-install-failed"],
-.messageImage[value="addon-install-started"],
-.messageImage[value="lwtheme-install-request"],
-.messageImage[value="lwtheme-install-notification"] {
+.messageImage[value="addon-install-started"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
 }
 

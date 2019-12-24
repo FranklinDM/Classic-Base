@@ -52,16 +52,6 @@ tabpanels {
   padding-bottom: 3px; /* compensates the bottom margin of background tabs */
 }
 
-.tabbrowser-tab:-moz-lwtheme {
-  text-shadow: none;
-}
-
-.scrollbutton-up:-moz-lwtheme,
-.scrollbutton-down:-moz-lwtheme:not([selected="true"]),
-.tabbrowser-tab:-moz-lwtheme:not([selected="true"]) {
-  opacity: .8;
-}
-
 /* ::::: Tab scrollbox arrow, and all-tabs buttons ::::: */
 
 .scrollbutton-up,
@@ -77,13 +67,6 @@ tabpanels {
   -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
   -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow;
   border-radius: 2px 2px 0px 0px;
-}
-
-@media (-moz-windows-theme: aero) {
-  .scrollbutton-up,
-  .scrollbutton-down {
-    padding: 0px 2px;
-  }
 }
 
 .scrollbutton-up:-moz-locale-dir(rtl),
