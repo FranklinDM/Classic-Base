@@ -5,6 +5,7 @@
 @import url("chrome://global/skin/");
 @import url("chrome://global/skin/throbber.css");
 @import url("chrome://browser/skin/devtools/browser.css");
+@import url("chrome://browser/skin/padlock.css");
 @import url("chrome://os_target/skin/browser.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1488,20 +1489,6 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > :-moz-any(#nav-bar[currentset*="unified-back-forward-button"],#nav-bar:not([currentset])) > #unified-back-forward-button + #urlbar-container > #urlbar > #identity-box > #page-proxy-favicon {
   margin-inline-end: 1px;
 }
-
-/* Since we already have a padlock, always use the generic icon until the favicon loads
-.verifiedDomain > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://browser/skin/identity-icons-https.png);
-}
-
-.verifiedIdentity > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://browser/skin/identity-icons-https-ev.png);
-}
-
-.mixedActiveContent > #page-proxy-favicon[pageproxystate="valid"] {
-  list-style-image: url(chrome://browser/skin/identity-icons-https-mixed-active.png);
-}
-*/
 
 #identity-box:hover > #page-proxy-favicon {
   -moz-image-region: rect(0, 32px, 16px, 16px);
