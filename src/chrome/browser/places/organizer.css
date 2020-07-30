@@ -64,6 +64,7 @@
 
 #placesMenu > menu[_moz-menuactive="true"] {
   background-color: transparent;
+  color: inherit;
 }
 
 #placesMenu > menu:hover {
