@@ -1,0 +1,15 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://os_target/skin/mailWindow1.css");
+
+@media (-moz-windows-classic) {
+  #messengerWindow[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
+    margin-top: 4px;
+  }
+}
+
+#messengerWindow[tabsintitlebar] .titlebar-placeholder[type="appmenu-button"] {
+  margin-right: 4px;
+}

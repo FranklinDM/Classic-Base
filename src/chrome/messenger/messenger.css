@@ -111,3 +111,76 @@ menulist.folderMenuItem menu:not(.folderMenuItem) {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+
+/* ::::: app menu button ::::: */
+
+#appmenu-button {
+  -moz-appearance: none;
+  background-clip: padding-box;
+  border: 1px solid ThreeDShadow;
+  border-top: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 1.5em .05em;
+  margin: 1px 1px 2px;
+  box-shadow: inset 0px 0px 0px 1px ThreeDHighlight;
+}
+
+@media (-moz-windows-classic) {
+  #appmenu-button {
+    margin-bottom: 1px;
+  }
+}
+
+#appmenu-button {
+  background: #d67e0a;
+}
+
+#appmenu-button:hover:not(:active):not([open]) {
+  background: #f49044;
+}
+
+#appmenu-button:hover:active,
+#appmenu-button[open] {
+  background: #d18700;
+}
+
+#appmenu-button > .button-box {
+  border-style: none;
+  padding: 0;
+}
+
+#appmenu-button > .button-box > .button-menu-dropmarker {
+  list-style-image: url("appmenu-dropmarker.png");
+  filter: invert(100%);
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-inline-start: .5em;
+}
+
+@media (-moz-windows-compositor) {
+  @media (-moz-os-version: windows-win10) {
+    #appmenu-button {
+      margin-top: -1px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+/* ::::: App Menu on Tabbar ::::: */
+
+#appmenu-toolbar-button:not(:hover):not([open]):not(:-moz-lwtheme) {
+  color: inherit;
+}
+
+#appmenu-toolbar-button > .toolbarbutton-text,
+#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
+  margin-top: -2px !important;
+  margin-bottom: -2px !important;
+}
+
+#wrapper-appmenu-toolbar-button {
+  opacity: .3;
+}

@@ -10,6 +10,8 @@ skin    mozapps                 classic-base        chrome/mozapps/
 skin    browser                 classic-base        chrome/browser/
 skin    messenger               classic-base        chrome/messenger/
 skin    messenger-newsblog      classic-base        chrome/messenger-newsblog/
+skin    messenger-shim          classic-base        chrome/shim/messenger/        application={29877c1d-27df-4421-9a79-382c31470151}
+skin    messenger-shim          classic-base        chrome/shim/messenger-legacy/ application={3550f703-e582-4d05-9a08-453d09bdfdc6}
 skin    editor                  classic-base        chrome/editor/
 skin    ambassador              classic-base        chrome/ambassador/
 skin    communicator            classic-base        chrome/communicator/
