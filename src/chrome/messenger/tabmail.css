@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 @import url("chrome://messenger/skin/shared/tabmail.css");
+@import url("chrome://messenger-shim/skin/tabmail.css");
 
 /**
  * Tabmail Tabs
@@ -12,23 +13,9 @@
   color: inherit;
 }
 
-.tabmail-arrowscrollbox {
-  margin-bottom: -1px;
-}
-
 /**
  * Tab
  */
-#messengerWindow[tabsintitlebar]
-.tabmail-tab:not([selected]):not(:-moz-lwtheme) {
-  color: CaptionText;
-}
-
-#messengerWindow[tabsintitlebar]
-.tabmail-tab:not([selected]):not(:-moz-lwtheme):-moz-window-inactive {
-  color: InactiveCaptionText;
-}
-
 .tabmail-tab[busy],
 .tabmail-tab[thinking] {
   list-style-image: url("chrome://global/skin/icons/loading.png") !important;

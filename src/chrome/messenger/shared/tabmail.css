@@ -5,7 +5,6 @@
 @import url("chrome://messenger/skin/sharedPlatform.css");
 
 #tabs-toolbar {
-  --tabHeight: 23px;
   --tabSidePadding: 3px;
 }
 
@@ -14,8 +13,8 @@
 .tabmail-tab {
   -moz-appearance: none;
   -moz-box-align: stretch;
-  margin: 0 0 2px 0;
-  padding: 0;
+  margin: 0;
+  padding: 3px 1px 4px;
   background-color: rgba(0, 0, 0, 0.10);
   border-top:    2px solid;
   border-right:  2px solid;
@@ -68,10 +67,6 @@
   margin-inline-start: 4px;
   margin-inline-end: -2px;
   padding: 0;
-}
-
-.tab-background {
-  min-height: var(--tabHeight);
 }
 
 .tabmail-tab:-moz-lwtheme {

@@ -14,24 +14,16 @@
 @import url("chrome://messenger/skin/folderPane.css");
 @import url("chrome://messenger/skin/tagColors.css");
 @import url("chrome://messenger/skin/shared/mailWindow1.css");
+@import url("chrome://os_target/skin/mailWindow1.css");
 
-/* give the toolbox a min-height of 42px for Australis theme */
-.mail-toolbox:not([mode="full"]) > toolbar:only-of-type,
-.mail-toolbox[mode="full"][labelalign="end"] > toolbar:only-of-type {
-  margin-top: 6px;
-  margin-bottom: 6px;
+@media (-moz-windows-classic) {
+  #messengerWindow[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
+    margin-top: 4px;
+  }
 }
 
-.mail-toolbox[iconsize="large"]:not([mode="full"]) > toolbar:only-of-type,
-.mail-toolbox[iconsize="large"][mode="full"][labelalign="end"] >
-toolbar:only-of-type {
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.mail-toolbox[mode="text"]:not([mode="full"]) > toolbar:only-of-type {
-  margin-top: 5px;
-  margin-bottom: 5px;
+#messengerWindow[tabsintitlebar] .titlebar-placeholder[type="appmenu-button"] {
+  margin-right: 4px;
 }
 
 /* Don't use the listbox appearance as that gives us a blue-grey top border
@@ -359,10 +351,6 @@ treechildren::-moz-tree-image(subjectCol, imapdeleted) {
 
 #titlebar {
   -moz-binding: url("chrome://global/content/bindings/general.xml#windowdragbox");
-}
-
-#messengerWindow:not([tabsintitlebar]) #titlebar {
-  visibility: collapse;
 }
 
 #titlebar-spacer {
